@@ -1,0 +1,22 @@
+<br>
+<div class="container border border-primary rounded" style="padding: 20px;">
+  <br>
+  <h1 class="align-middle">Products List</h1>
+  <p>
+    Welcome to Product Management! Here we can manage a set of products.
+    You are able to create products, remove old products, and edit products.
+  </p>
+  <hr>
+  <div class="row">
+    <div class="col" *ngFor="let p of allProducts">
+      <h4>{{p.title}}</h4>
+      <p>${{p.price}}</p>
+      <p><img src="{{p.image}}"></p>
+      <button class="btn btn-success" (click)="editProductButton(p._id)">Edit</button>
+      <button class="btn btn-danger" (click)="deleteProductButton(p._id)">Delete</button>
+      <br><br>
+    </div>
+    <br>
+    <hr>
+  </div>
+</div>

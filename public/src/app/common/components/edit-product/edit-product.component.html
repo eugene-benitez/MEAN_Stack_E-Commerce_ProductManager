@@ -1,0 +1,35 @@
+<br>
+<div class="container border border-primary rounded" style="padding: 20px;">
+  <br>
+  <h1 *ngIf="ProductPriceError">{{ProductPriceError}}</h1>
+  <h1 *ngIf="ProductTitleError">{{ProductTitleError}}</h1>
+  <h1 class="align-middle">Edit Product: {{thisProduct.title}} </h1>
+
+  <div class="form-group">
+    <form (submit)="onEdit()">
+
+      <label for="">Title</label>
+      <input type="text" name="editProduct.title" id="" class="form-control" placeholder="" aria-describedby="helpId"
+        #name="ngModel" [(ngModel)]="editProduct.title">
+
+
+      <label for="">Price</label>
+      <input type="number" name="editProduct.price" id="" class="form-control" placeholder="" aria-describedby="helpId"
+        #name="ngModel" [(ngModel)]="editProduct.price">
+
+
+      <label for="">Image URL</label>
+      <input type="text" name="editProduct.image" id="" class="form-control" placeholder="" aria-describedby="helpId"
+        #name="ngModel" [(ngModel)]="editProduct.image">
+      <br>
+
+
+      <button class="btn btn-success" type="submit">Update</button>
+
+      <button class="btn btn-danger" (click)="deleteProductButton(thisProduct._id)">Delete</button>
+
+
+    </form>
+  </div>
+
+</div>
